@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ZooStream — Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">ZS</span>
+    <span class="brand-name">ZooStream</span>
+  </div>
+  <div class="topbar-right">
+    <span id="statusLabel">menghubungkan</span>
+    <span class="status-dot" id="statusDot" title="status sambungan"></span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-ticker">
+    <span>KOLEKSI TONTONAN</span>
+    <span>·</span>
+    <span id="heroCount">memuat data…</span>
+  </div>
+  <h1 class="hero-title">Jelajahi tiap<br>habitat tontonan.</h1>
+  <p class="hero-sub">Donghua, anime, movie, dan drama — dikumpulkan jadi empat kanal jelajah.</p>
+
+  <div class="search-wrap">
+    <label class="search-label" for="searchInput">Cari judul</label>
+    <input
+      type="text"
+      id="searchInput"
+      class="search-input"
+      placeholder="ketik judul, mis. king…"
+      autocomplete="off"
+    />
+    <button class="search-clear" id="searchClear" type="button" aria-label="Hapus pencarian">×</button>
+    <p class="search-status" id="searchStatus"></p>
+  </div>
+</section>
+
+<main id="channels">
+  <!-- rail kanal akan di-render oleh script.js -->
+</main>
+
+<div class="state-banner" id="stateBanner" hidden></div>
+
+<footer class="footer">
+  <span>ZooStream</span>
+  <span class="footer-dim">dibangun oleh BINTANG</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

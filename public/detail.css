@@ -1,0 +1,228 @@
+/* ===== detail page ===== */
+
+.topbar .brand { display: flex; }
+
+.back-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+  transition: color 0.15s ease;
+}
+.back-link:hover { color: var(--accent); }
+
+.detail-root {
+  position: relative;
+  z-index: 2;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 36px 28px 60px;
+}
+
+/* ---- skeleton ---- */
+.detail-skel {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+}
+.skel-poster {
+  aspect-ratio: 2/3;
+  border-radius: 8px;
+  background: linear-gradient(100deg, var(--card) 30%, var(--card-hover) 50%, var(--card) 70%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+.skel-lines { display: flex; flex-direction: column; gap: 14px; padding-top: 8px; }
+.skel-line {
+  height: 14px;
+  border-radius: 4px;
+  background: linear-gradient(100deg, var(--card) 30%, var(--card-hover) 50%, var(--card) 70%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+.skel-line.w70 { width: 70%; height: 28px; }
+.skel-line.w40 { width: 40%; }
+.skel-line.w90 { width: 90%; }
+.skel-line.w60 { width: 60%; }
+
+@media (max-width: 640px) {
+  .detail-skel { grid-template-columns: 1fr; }
+  .skel-poster { max-width: 200px; }
+}
+
+/* ---- specimen header ---- */
+.specimen {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.specimen-poster {
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  border-radius: 8px;
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+}
+
+.specimen-info { padding-top: 4px; }
+
+.specimen-tag {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent-dim);
+  background: var(--accent-dim);
+  padding: 3px 9px;
+  border-radius: 3px;
+  margin-bottom: 14px;
+}
+
+.specimen-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: clamp(26px, 4.5vw, 38px);
+  line-height: 1.08;
+  margin: 0 0 16px;
+}
+
+.specimen-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 18px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px;
+  color: var(--text-dim);
+}
+
+.specimen-meta-row .meta-item strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.specimen-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.genre-pill {
+  font-size: 12px;
+  color: var(--text-dim);
+  border: 1px solid var(--line);
+  padding: 5px 11px;
+  border-radius: 20px;
+}
+
+.specimen-synopsis {
+  color: var(--text);
+  font-size: 14.5px;
+  line-height: 1.65;
+  max-width: 640px;
+  opacity: 0.92;
+}
+
+@media (max-width: 640px) {
+  .specimen { grid-template-columns: 1fr; gap: 20px; }
+  .specimen-poster { max-width: 180px; }
+}
+
+/* ---- episode catalog ---- */
+.episode-section {
+  border-top: 1px solid var(--line);
+  padding-top: 28px;
+}
+
+.episode-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.episode-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.episode-heading {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 20px;
+  margin: 0;
+}
+
+.episode-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-left: auto;
+}
+
+.episode-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 10px;
+}
+
+.episode-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 14px 6px;
+  text-align: center;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.episode-item:hover, .episode-item:focus-visible {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.episode-item:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.episode-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+}
+
+.episode-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.detail-empty, .detail-error {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-dim);
+  font-size: 13px;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.detail-error { color: var(--accent); }
